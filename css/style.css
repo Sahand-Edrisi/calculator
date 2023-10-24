@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+
+    background: rgb(132,22,218);
+    background: -moz-linear-gradient(335deg, rgba(132,22,218,1) 40%, rgba(28,144,193,1) 79%, rgba(35,206,135,1) 100%, rgba(216,237,15,1) 100%);
+    background: -webkit-linear-gradient(335deg, rgba(132,22,218,1) 40%, rgba(28,144,193,1) 79%, rgba(35,206,135,1) 100%, rgba(216,237,15,1) 100%);
+    background: linear-gradient(335deg, rgba(132,22,218,1) 40%, rgba(28,144,193,1) 79%, rgba(35,206,135,1) 100%, rgba(216,237,15,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8416da",endColorstr="#d8ed0f",GradientType=1);
+    
+    height: 100vh ;
+}
+#body-calculator{
+width: 250px;
+}
+
+
+
