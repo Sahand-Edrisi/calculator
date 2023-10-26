@@ -1,18 +1,13 @@
 //Clear the display
+let display = document.getElementById("display");
 let ClearDisplay = document.getElementById("ClearDisplay");
 let clearLastNumber = document.getElementById("clearLastNumber");
 
-ClearDisplay.addEventListener(
-  "click",
-  () => (document.getElementById("display").value = "")
-);
+ClearDisplay.addEventListener("click", () => (display.value = ""));
 
 clearLastNumber.addEventListener(
   "click",
-  () =>
-    (document.getElementById("display").value = document
-      .getElementById("display")
-      .value.slice(0, -1))
+  () => (display.value = display.value.slice(0, -1))
 );
 
 // Nuumbers
@@ -29,52 +24,52 @@ let numberNine = document.getElementById("numberNine");
 
 numberZero.addEventListener(
   "click",
-  () => (document.getElementById("display").value += numberZero.innerHTML)
+  () => (display.value += numberZero.innerHTML)
 );
 
 numberOne.addEventListener(
   "click",
-  () => (document.getElementById("display").value += numberOne.innerHTML)
+  () => (display.value += numberOne.innerHTML)
 );
 
 numberTwo.addEventListener(
   "click",
-  () => (document.getElementById("display").value += numberTwo.innerHTML)
+  () => (display.value += numberTwo.innerHTML)
 );
 
 numberThree.addEventListener(
   "click",
-  () => (document.getElementById("display").value += numberThree.innerHTML)
+  () => (display.value += numberThree.innerHTML)
 );
 
 numberFour.addEventListener(
   "click",
-  () => (document.getElementById("display").value += numberFour.innerHTML)
+  () => (display.value += numberFour.innerHTML)
 );
 
 numberFive.addEventListener(
   "click",
-  () => (document.getElementById("display").value += numberFive.innerHTML)
+  () => (display.value += numberFive.innerHTML)
 );
 
 numberSix.addEventListener(
   "click",
-  () => (document.getElementById("display").value += numberSix.innerHTML)
+  () => (display.value += numberSix.innerHTML)
 );
 
 numberSeven.addEventListener(
   "click",
-  () => (document.getElementById("display").value += numberSeven.innerHTML)
+  () => (display.value += numberSeven.innerHTML)
 );
 
 numberEight.addEventListener(
   "click",
-  () => (document.getElementById("display").value += numberEight.innerHTML)
+  () => (display.value += numberEight.innerHTML)
 );
 
 numberNine.addEventListener(
   "click",
-  () => (document.getElementById("display").value += numberNine.innerHTML)
+  () => (display.value += numberNine.innerHTML)
 );
 
 // Calculations
@@ -86,41 +81,15 @@ let Point = document.getElementById("Point");
 let sum = document.getElementById("sum");
 let percent = document.getElementById("percent");
 
-percent.addEventListener(
-  "click",
-  () => (document.getElementById("display").value /= 100)
-);
-division.addEventListener(
-  "click",
-  () => (document.getElementById("display").value += division.innerHTML)
-);
+percent.addEventListener("click", () => (display.value /= 100));
+division.addEventListener("click", () => (display.value += division.innerHTML));
 
-multiply.addEventListener(
-  "click",
-  () => (document.getElementById("display").value += multiply.innerHTML)
-);
+multiply.addEventListener("click", () => (display.value += multiply.innerHTML));
 
-plus.addEventListener(
-  "click",
-  () => (document.getElementById("display").value += plus.innerHTML)
-);
+plus.addEventListener("click", () => (display.value += plus.innerHTML));
 
-negative.addEventListener(
-  "click",
-  () => (document.getElementById("display").value += negative.innerHTML)
-);
+negative.addEventListener("click", () => (display.value += negative.innerHTML));
 
-Point.addEventListener(
-  "click",
-  () => (document.getElementById("display").value += Point.innerHTML)
-);
+Point.addEventListener("click", () => (display.value += Point.innerHTML));
 
-sum.addEventListener(
-  "click",
-  () =>
-    (document.getElementById("display").value = eval(
-      document.getElementById("display").value
-    ))
-);
-
-
+sum.addEventListener("click", () => (display.value = eval(display.value)));
