@@ -1,16 +1,7 @@
-//Clear the display
 let display = document.getElementById("display");
 let ClearDisplay = document.getElementById("ClearDisplay");
 let clearLastNumber = document.getElementById("clearLastNumber");
 
-ClearDisplay.addEventListener("click", () => (display.value = ""));
-
-clearLastNumber.addEventListener(
-  "click",
-  () => (display.value = display.value.slice(0, -1))
-);
-
-// Nuumbers
 let numberZero = document.getElementById("numberZero");
 let numberOne = document.getElementById("numberOne");
 let numberTwo = document.getElementById("numberTwo");
@@ -21,6 +12,24 @@ let numberSix = document.getElementById("numberSix");
 let numberSeven = document.getElementById("numberSeven");
 let numberEight = document.getElementById("numberEight");
 let numberNine = document.getElementById("numberNine");
+
+let division = document.getElementById("division");
+let multiply = document.getElementById("multiply");
+let plus = document.getElementById("plus");
+let negative = document.getElementById("negative");
+let Point = document.getElementById("Point");
+let sum = document.getElementById("sum");
+let percent = document.getElementById("percent");
+//Clear the display
+
+ClearDisplay.addEventListener("click", () => (display.value = ""));
+
+clearLastNumber.addEventListener(
+  "click",
+  () => (display.value = display.value.slice(0, -1))
+);
+
+// Nuumbers
 
 numberZero.addEventListener(
   "click",
@@ -73,13 +82,6 @@ numberNine.addEventListener(
 );
 
 // Calculations
-let division = document.getElementById("division");
-let multiply = document.getElementById("multiply");
-let plus = document.getElementById("plus");
-let negative = document.getElementById("negative");
-let Point = document.getElementById("Point");
-let sum = document.getElementById("sum");
-let percent = document.getElementById("percent");
 
 percent.addEventListener("click", () => (display.value /= 100));
 division.addEventListener("click", () => (display.value += division.innerHTML));
