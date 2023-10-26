@@ -1,128 +1,126 @@
 //Clear the display
-document
-  .getElementById("ClearDisplay")
-  .addEventListener(
-    "click",
-    () => (document.getElementById("display").value = "")
-  );
+let ClearDisplay = document.getElementById("ClearDisplay");
+let clearLastNumber = document.getElementById("clearLastNumber");
 
-document
-  .getElementById("clearLastNumber")
-  .addEventListener(
-    "click",
-    () =>
-      (document.getElementById("display").value = document
-        .getElementById("display")
-        .value.slice(0, -1))
-  );
+ClearDisplay.addEventListener(
+  "click",
+  () => (document.getElementById("display").value = "")
+);
+
+clearLastNumber.addEventListener(
+  "click",
+  () =>
+    (document.getElementById("display").value = document
+      .getElementById("display")
+      .value.slice(0, -1))
+);
 
 // Nuumbers
+let numberZero = document.getElementById("numberZero");
+let numberOne = document.getElementById("numberOne");
+let numberTwo = document.getElementById("numberTwo");
+let numberThree = document.getElementById("numberThree");
+let numberFour = document.getElementById("numberFour");
+let numberFive = document.getElementById("numberFive");
+let numberSix = document.getElementById("numberSix");
+let numberSeven = document.getElementById("numberSeven");
+let numberEight = document.getElementById("numberEight");
+let numberNine = document.getElementById("numberNine");
 
-document
-  .getElementById("numberZero")
-  .addEventListener(
-    "click",
-    () => (document.getElementById("display").value += "0")
-  );
-document
-  .getElementById("numberOne")
-  .addEventListener(
-    "click",
-    () => (document.getElementById("display").value += "1")
-  );
-document
-  .getElementById("numberTwo")
-  .addEventListener(
-    "click",
-    () => (document.getElementById("display").value += "2")
-  );
-document
-  .getElementById("numberThree")
-  .addEventListener(
-    "click",
-    () => (document.getElementById("display").value += "3")
-  );
-document
-  .getElementById("numberFour")
-  .addEventListener(
-    "click",
-    () => (document.getElementById("display").value += "4")
-  );
-document
-  .getElementById("numberFive")
-  .addEventListener(
-    "click",
-    () => (document.getElementById("display").value += "5")
-  );
-document
-  .getElementById("numberSix")
-  .addEventListener(
-    "click",
-    () => (document.getElementById("display").value += "6")
-  );
-document
-  .getElementById("numberSeven")
-  .addEventListener(
-    "click",
-    () => (document.getElementById("display").value += "7")
-  );
-document
-  .getElementById("numberEight")
-  .addEventListener(
-    "click",
-    () => (document.getElementById("display").value += "8")
-  );
-document
-  .getElementById("numberNine")
-  .addEventListener(
-    "click",
-    () => (document.getElementById("display").value += "9")
-  );
+numberZero.addEventListener(
+  "click",
+  () => (document.getElementById("display").value += numberZero.innerHTML)
+);
+
+numberOne.addEventListener(
+  "click",
+  () => (document.getElementById("display").value += numberOne.innerHTML)
+);
+
+numberTwo.addEventListener(
+  "click",
+  () => (document.getElementById("display").value += numberTwo.innerHTML)
+);
+
+numberThree.addEventListener(
+  "click",
+  () => (document.getElementById("display").value += numberThree.innerHTML)
+);
+
+numberFour.addEventListener(
+  "click",
+  () => (document.getElementById("display").value += numberFour.innerHTML)
+);
+
+numberFive.addEventListener(
+  "click",
+  () => (document.getElementById("display").value += numberFive.innerHTML)
+);
+
+numberSix.addEventListener(
+  "click",
+  () => (document.getElementById("display").value += numberSix.innerHTML)
+);
+
+numberSeven.addEventListener(
+  "click",
+  () => (document.getElementById("display").value += numberSeven.innerHTML)
+);
+
+numberEight.addEventListener(
+  "click",
+  () => (document.getElementById("display").value += numberEight.innerHTML)
+);
+
+numberNine.addEventListener(
+  "click",
+  () => (document.getElementById("display").value += numberNine.innerHTML)
+);
 
 // Calculations
+let division = document.getElementById("division");
+let multiply = document.getElementById("multiply");
+let plus = document.getElementById("plus");
+let negative = document.getElementById("negative");
+let Point = document.getElementById("Point");
+let sum = document.getElementById("sum");
+let percent = document.getElementById("percent");
 
-document
-  .getElementById("percent")
-  .addEventListener(
-    "click",
-    () => (document.getElementById("display").value /= 100)
-  );
-document
-  .getElementById("division")
-  .addEventListener(
-    "click",
-    () => (document.getElementById("display").value += "/")
-  );
-document
-  .getElementById("multiply")
-  .addEventListener(
-    "click",
-    () => (document.getElementById("display").value += "*")
-  );
-document
-  .getElementById("plus")
-  .addEventListener(
-    "click",
-    () => (document.getElementById("display").value += "+")
-  );
-document
-  .getElementById("negative")
-  .addEventListener(
-    "click",
-    () => (document.getElementById("display").value += "-")
-  );
-document
-  .getElementById("Point")
-  .addEventListener(
-    "click",
-    () => (document.getElementById("display").value += ".")
-  );
-document
-  .getElementById("sum")
-  .addEventListener(
-    "click",
-    () =>
-      (document.getElementById("display").value = eval(
-        document.getElementById("display").value
-      ))
-  );
+percent.addEventListener(
+  "click",
+  () => (document.getElementById("display").value /= 100)
+);
+division.addEventListener(
+  "click",
+  () => (document.getElementById("display").value += division.innerHTML)
+);
+
+multiply.addEventListener(
+  "click",
+  () => (document.getElementById("display").value += multiply.innerHTML)
+);
+
+plus.addEventListener(
+  "click",
+  () => (document.getElementById("display").value += plus.innerHTML)
+);
+
+negative.addEventListener(
+  "click",
+  () => (document.getElementById("display").value += negative.innerHTML)
+);
+
+Point.addEventListener(
+  "click",
+  () => (document.getElementById("display").value += Point.innerHTML)
+);
+
+sum.addEventListener(
+  "click",
+  () =>
+    (document.getElementById("display").value = eval(
+      document.getElementById("display").value
+    ))
+);
+
+
