@@ -129,7 +129,7 @@ body.addEventListener("keydown", (event) => {
   }
 
   // Calculations
-  if (shiftKey && key == 191) {
+  if (key == 191) {
     display.value += division.innerHTML;
   }
   if (key == 187) {
@@ -138,7 +138,7 @@ body.addEventListener("keydown", (event) => {
   if (key == 189) {
     display.value += negative.innerHTML;
   }
-  if (shiftKey && key == 190) {
+  if (key == 190) {
     display.value += point.innerHTML;
   }
   if (key == 13) {
