@@ -21,6 +21,8 @@ let point = document.getElementById("point");
 let sum = document.getElementById("sum");
 let percent = document.getElementById("percent");
 
+let body = document.querySelector("body");
+
 //Clear the display
 clearDisplay.addEventListener("click", () => (display.value = ""));
 
@@ -79,6 +81,70 @@ numberNine.addEventListener(
   "click",
   () => (display.value += numberNine.innerHTML)
 );
+
+// EventListeners-keydown
+body.addEventListener("keydown", (event) => {
+  let key = event.keyCode;
+  let shiftKey = event.shiftKey;
+
+  // numbers
+  if (key == 48) {
+    display.value += numberZero.innerHTML;
+  }
+  if (key == 49) {
+    display.value += numberOne.innerHTML;
+  }
+  if (key == 50) {
+    display.value += numberTwo.innerHTML;
+  }
+  if (key == 51) {
+    display.value += numberThree.innerHTML;
+  }
+  if (key == 52) {
+    display.value += numberFour.innerHTML;
+  }
+  if (key == 53) {
+    display.value += numberFive.innerHTML;
+  }
+  if (key == 54) {
+    display.value += numberSix.innerHTML;
+  }
+  if (key == 55) {
+    display.value += numberSeven.innerHTML;
+  }
+  if (key == 57) {
+    display.value += numberNine.innerHTML;
+  }
+
+  // multiply and number eight is on one button
+  if (shiftKey && key == 56) {
+    display.value += multiply.innerHTML;
+  } else if (key == 56) {
+    display.value += numberEight.innerHTML;
+  }
+
+  // Clear the display
+  if (key == 8) {
+    display.value = display.value.slice(0, -1);
+  }
+
+  // Calculations
+  if (shiftKey && key == 191) {
+    display.value += division.innerHTML;
+  }
+  if (key == 187) {
+    display.value += plus.innerHTML;
+  }
+  if (key == 189) {
+    display.value += negative.innerHTML;
+  }
+  if (shiftKey && key == 190) {
+    display.value += point.innerHTML;
+  }
+  if (key == 13) {
+    display.value = eval(display.value);
+  }
+});
 
 // Calculations
 percent.addEventListener("click", () => (display.value /= 100));
