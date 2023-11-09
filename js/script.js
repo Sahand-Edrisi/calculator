@@ -83,37 +83,61 @@ numberNine.addEventListener(
 );
 
 // EventListeners-keydown
-body.addEventListener("keydown", (event) => {
-  let key = event.keyCode;
-  let shiftKey = event.shiftKey;
+body.addEventListener("keydown", (e) => {
+  let shiftKey = e.shiftKey;
+  let key = e.keyCode;
+  let keyCode = key;
+  switch ((key = keyCode)) {
+    // numbers
+    case 48:
+      display.value += numberZero.innerHTML;
+      break;
+    case 49:
+      display.value += numberOne.innerHTML;
+      break;
+    case 50:
+      display.value += numberTwo.innerHTML;
+      break;
+    case 51:
+      display.value += numberThree.innerHTML;
+      break;
+    case 52:
+      display.value += numberFour.innerHTML;
+      break;
+    case 53:
+      display.value += numberFive.innerHTML;
+      break;
+    case 54:
+      display.value += numberSix.innerHTML;
+      break;
+    case 55:
+      display.value += numberSeven.innerHTML;
+      break;
+    case 57:
+      display.value += numberNine.innerHTML;
+      break;
 
-  // numbers
-  if (key == 48) {
-    display.value += numberZero.innerHTML;
-  }
-  if (key == 49) {
-    display.value += numberOne.innerHTML;
-  }
-  if (key == 50) {
-    display.value += numberTwo.innerHTML;
-  }
-  if (key == 51) {
-    display.value += numberThree.innerHTML;
-  }
-  if (key == 52) {
-    display.value += numberFour.innerHTML;
-  }
-  if (key == 53) {
-    display.value += numberFive.innerHTML;
-  }
-  if (key == 54) {
-    display.value += numberSix.innerHTML;
-  }
-  if (key == 55) {
-    display.value += numberSeven.innerHTML;
-  }
-  if (key == 57) {
-    display.value += numberNine.innerHTML;
+    //Clear the display
+    case 8:
+      display.value = display.value.slice(0, -1);
+      break;
+
+    // Calculations
+    case 191:
+      display.value += division.innerHTML;
+      break;
+    case 187:
+      display.value += plus.innerHTML;
+      break;
+    case 189:
+      display.value += negative.innerHTML;
+      break;
+    case 190:
+      display.value += point.innerHTML;
+      break;
+    case 13:
+      display.value = eval(display.value);
+      break;
   }
 
   // multiply and number eight is on one button
@@ -121,28 +145,6 @@ body.addEventListener("keydown", (event) => {
     display.value += multiply.innerHTML;
   } else if (key == 56) {
     display.value += numberEight.innerHTML;
-  }
-
-  // Clear the display
-  if (key == 8) {
-    display.value = display.value.slice(0, -1);
-  }
-
-  // Calculations
-  if (key == 191) {
-    display.value += division.innerHTML;
-  }
-  if (key == 187) {
-    display.value += plus.innerHTML;
-  }
-  if (key == 189) {
-    display.value += negative.innerHTML;
-  }
-  if (key == 190) {
-    display.value += point.innerHTML;
-  }
-  if (key == 13) {
-    display.value = eval(display.value);
   }
 });
 
