@@ -1,86 +1,90 @@
-let display = document.getElementById("display");
-let clearDisplay = document.getElementById("clearDisplay");
-let clearLastNumber = document.getElementById("clearLastNumber");
+function ClearDisplay() {
+  display.value = "";
+}
+function ClearLastNumber() {
+  display.value = display.value.slice(0, -1);
+}
 
-let numberZero = document.getElementById("numberZero");
-let numberOne = document.getElementById("numberOne");
-let numberTwo = document.getElementById("numberTwo");
-let numberThree = document.getElementById("numberThree");
-let numberFour = document.getElementById("numberFour");
-let numberFive = document.getElementById("numberFive");
-let numberSix = document.getElementById("numberSix");
-let numberSeven = document.getElementById("numberSeven");
-let numberEight = document.getElementById("numberEight");
-let numberNine = document.getElementById("numberNine");
+function zero() {
+  display.value += numberZero.innerHTML;
+}
+function one() {
+  display.value += numberOne.innerHTML;
+}
+function two() {
+  display.value += numberTwo.innerHTML;
+}
+function three() {
+  display.value += numberThree.innerHTML;
+}
+function four() {
+  display.value += numberFour.innerHTML;
+}
+function five() {
+  display.value += numberFive.innerHTML;
+}
+function six() {
+  display.value += numberSix.innerHTML;
+}
+function seven() {
+  display.value += numberSeven.innerHTML;
+}
+function eight() {
+  display.value += numberEight.innerHTML;
+}
+function nine() {
+  display.value += numberNine.innerHTML;
+}
 
-let division = document.getElementById("division");
-let multiply = document.getElementById("multiply");
-let plus = document.getElementById("plus");
-let negative = document.getElementById("negative");
-let point = document.getElementById("point");
-let sum = document.getElementById("sum");
-let percent = document.getElementById("percent");
+function Division() {
+  display.value += division.innerHTML;
+}
+function Multiply() {
+  display.value += multiply.innerHTML;
+}
+function Plus() {
+  display.value += plus.innerHTML;
+}
+function Negative() {
+  display.value += negative.innerHTML;
+}
+function Point() {
+  display.value += point.innerHTML;
+}
+function Sum() {
+  display.value = eval(display.value);
+}
+function Percent() {
+  display.value /= 100;
+}
 
 let body = document.querySelector("body");
 
 //Clear the display
-clearDisplay.addEventListener("click", () => (display.value = ""));
+clearDisplay.addEventListener("click", () => ClearDisplay());
 
-clearLastNumber.addEventListener(
-  "click",
-  () => (display.value = display.value.slice(0, -1))
-);
+clearLastNumber.addEventListener("click", () => ClearLastNumber());
 
 // EventListeners
-numberZero.addEventListener(
-  "click",
-  () => (display.value += numberZero.innerHTML)
-);
+numberZero.addEventListener("click", () => zero());
 
-numberOne.addEventListener(
-  "click",
-  () => (display.value += numberOne.innerHTML)
-);
+numberOne.addEventListener("click", () => one());
 
-numberTwo.addEventListener(
-  "click",
-  () => (display.value += numberTwo.innerHTML)
-);
+numberTwo.addEventListener("click", () => two());
 
-numberThree.addEventListener(
-  "click",
-  () => (display.value += numberThree.innerHTML)
-);
+numberThree.addEventListener("click", () => three());
 
-numberFour.addEventListener(
-  "click",
-  () => (display.value += numberFour.innerHTML)
-);
+numberFour.addEventListener("click", () => four());
 
-numberFive.addEventListener(
-  "click",
-  () => (display.value += numberFive.innerHTML)
-);
+numberFive.addEventListener("click", () => five());
 
-numberSix.addEventListener(
-  "click",
-  () => (display.value += numberSix.innerHTML)
-);
+numberSix.addEventListener("click", () => six());
 
-numberSeven.addEventListener(
-  "click",
-  () => (display.value += numberSeven.innerHTML)
-);
+numberSeven.addEventListener("click", () => seven());
 
-numberEight.addEventListener(
-  "click",
-  () => (display.value += numberEight.innerHTML)
-);
+numberEight.addEventListener("click", () => eight());
 
-numberNine.addEventListener(
-  "click",
-  () => (display.value += numberNine.innerHTML)
-);
+numberNine.addEventListener("click", () => nine());
 
 // EventListeners-keydown
 body.addEventListener("keydown", (e) => {
@@ -90,75 +94,77 @@ body.addEventListener("keydown", (e) => {
   switch ((key = keyCode)) {
     // numbers
     case 48:
-      display.value += numberZero.innerHTML;
+      zero();
       break;
     case 49:
-      display.value += numberOne.innerHTML;
+      one();
       break;
     case 50:
-      display.value += numberTwo.innerHTML;
+      two();
       break;
     case 51:
-      display.value += numberThree.innerHTML;
+      three();
       break;
     case 52:
-      display.value += numberFour.innerHTML;
-      break;
-    case 53:
-      display.value += numberFive.innerHTML;
+      four();
       break;
     case 54:
-      display.value += numberSix.innerHTML;
+      six();
       break;
     case 55:
-      display.value += numberSeven.innerHTML;
+      seven();
       break;
     case 57:
-      display.value += numberNine.innerHTML;
+      nine();
       break;
 
     //Clear the display
     case 8:
-      display.value = display.value.slice(0, -1);
+      ClearLastNumber();
       break;
 
     // Calculations
     case 191:
-      display.value += division.innerHTML;
+      Division();
       break;
     case 187:
-      display.value += plus.innerHTML;
+      Plus();
       break;
     case 189:
-      display.value += negative.innerHTML;
+      Negative();
       break;
     case 190:
-      display.value += point.innerHTML;
+      Point();
       break;
     case 13:
-      display.value = eval(display.value);
+      Sum();
       break;
   }
 
-  // multiply and number eight is on one button
+  // multiply and number eight is on one button and Percent and number five is on one button
   if (shiftKey && key == 56) {
-    display.value += multiply.innerHTML;
+    Multiply();
   } else if (key == 56) {
-    display.value += numberEight.innerHTML;
+    eight();
+  }
+  if (shiftKey && key == 53) {
+    Percent();
+  } else if (key == 53) {
+    five();
   }
 });
 
 // Calculations
-percent.addEventListener("click", () => (display.value /= 100));
+percent.addEventListener("click", () => Percent());
 
-division.addEventListener("click", () => (display.value += division.innerHTML));
+division.addEventListener("click", () => Division());
 
-multiply.addEventListener("click", () => (display.value += multiply.innerHTML));
+multiply.addEventListener("click", () => Multiply());
 
-plus.addEventListener("click", () => (display.value += plus.innerHTML));
+plus.addEventListener("click", () => Plus());
 
-negative.addEventListener("click", () => (display.value += negative.innerHTML));
+negative.addEventListener("click", () => Negative());
 
-point.addEventListener("click", () => (display.value += point.innerHTML));
+point.addEventListener("click", () => Point);
 
-sum.addEventListener("click", () => (display.value = eval(display.value)));
+sum.addEventListener("click", () => Sum());
