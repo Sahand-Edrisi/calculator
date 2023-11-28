@@ -165,6 +165,6 @@ plus.addEventListener("click", () => Plus());
 
 negative.addEventListener("click", () => Negative());
 
-point.addEventListener("click", () => Point);
+point.addEventListener("click", () => Point());
 
 sum.addEventListener("click", () => Sum());
